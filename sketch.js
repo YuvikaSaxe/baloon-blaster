@@ -27,8 +27,6 @@ function draw(){
     textSize(25);
     fill("blue");
     text("Score: "+ score, 700, 50);
- 
-
 if(gameState===PLAY)
 {
     var rand = Math.round(random(1,5));
@@ -73,6 +71,23 @@ if(mousePressedOver(oBalloon)){
  if(mousePressedOver(yBalloon)){
     yBalloon.visible=false
     score=score+1
+    }
+    if(balloons.isTouching(ground)){
+        score= score-1
+    }
+    if(score===0){
+    textSize(25)
+    fill("green")
+    text(GAME OVER!,400,100)
+    }
+    
+    if(score===50){
+    textSize(25)
+    fill("yellow")
+    text(YOU WON!,400,100)
+         textSize(25)
+    fill("yellow")
+    text(Press space to get another chance to play,400,200)
     }
 /*
     if(rBalloon.isTouching(ground))
@@ -157,10 +172,10 @@ function yellowBalloons()
 }
 //create other functions here
 
-function reset(){
-    if(keyPressed===SPACE){
-        score= 0;
-        gameState=== PLAY;
-    }
-}
+//function reset(){
+  //  if(keyPressed===SPACE){
+    //    score= 0;
+      //  gameState=== PLAY;
+    //}
+//}
 
