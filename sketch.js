@@ -78,7 +78,7 @@ if(mousePressedOver(oBalloon)){
     if(score===0){
     textSize(25)
     fill("green")
-    text(GAME OVER!,400,100)
+    text(GAME OVER!,400,100);
     }
     
     if(score===50){
